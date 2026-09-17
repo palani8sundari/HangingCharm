@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>html,body{margin:0;background:transparent;overflow:hidden}svg{display:block}</style>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfbfe"/><stop offset="1" stop-color="#dfe3f2"/></linearGradient>
+    <linearGradient id="cord" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#87592b"/><stop offset="1" stop-color="#b3813f"/></linearGradient>
+    <radialGradient id="outer" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#3b6fdc"/><stop offset=".45" stop-color="#1c46b4"/><stop offset="1" stop-color="#0a1f66"/></radialGradient>
+    <radialGradient id="iris" cx=".36" cy=".3" r=".8"><stop offset="0" stop-color="#8fd0f7"/><stop offset=".55" stop-color="#3f95e2"/><stop offset="1" stop-color="#1d63b8"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset=".45" stop-color="#d9ad55"/><stop offset="1" stop-color="#9a6f26"/></linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+    <clipPath id="tile"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <g clip-path="url(#tile)">
+    <ellipse cx="548" cy="712" rx="170" ry="150" fill="#161927" opacity=".20" filter="url(#soft)"/>
+    <path d="M512,90 V420" stroke="url(#cord)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M512,90 V420" stroke="#dcb06b" stroke-width="5" stroke-dasharray="7 11"/>
+    <circle cx="512" cy="440" r="20" fill="url(#gold)"/>
+    <circle cx="512" cy="492" r="26" fill="none" stroke="url(#gold)" stroke-width="11"/>
+    <circle cx="512" cy="676" r="160" fill="url(#outer)"/>
+    <circle cx="512" cy="676" r="116" fill="#f3f7ff"/>
+    <circle cx="512" cy="676" r="72" fill="url(#iris)"/>
+    <circle cx="512" cy="676" r="34" fill="#0a1230"/>
+    <ellipse cx="458" cy="612" rx="46" ry="28" fill="#fff" opacity=".5" transform="rotate(-36 458 612)"/>
+    <circle cx="512" cy="676" r="157" fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="6"/>
+  </g>
+  <rect x="100.5" y="100.5" width="823" height="823" rx="186" fill="none" stroke="#161927" stroke-opacity=".08" stroke-width="2"/>
+</svg>

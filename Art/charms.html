@@ -1,0 +1,440 @@
+<!doctype html>
+<meta charset="utf-8">
+<!-- Source art for the charms. Scripts/render-art.sh screenshots each one
+     (charms.html#nazar etc.) into Resources/Charms at 4x. Every charm is drawn
+     with the cord's end at (0,0) and a strung section of cord and beads above
+     the charm body. Heights must match Charm.artHeight in Sources/Charm.swift.
+     Detailed pieces are drawn in a larger design space and scaled down; filters
+     sit outside those scaled groups so their sizes stay in charm units. -->
+<style>html,body{margin:0;background:transparent;overflow:hidden}svg{display:block}</style>
+<svg width="0" height="0" style="position:absolute"><defs id="defs">
+  <linearGradient id="b-rim" x1="0" y1="0" x2="0" y2="1">
+    <stop offset=".72" stop-color="#fff" stop-opacity="0"/><stop offset=".97" stop-color="#fff" stop-opacity=".35"/>
+  </linearGradient>
+  <radialGradient id="g-cobalt" cx=".36" cy=".3" r=".78">
+    <stop offset="0" stop-color="#4a7cf0"/><stop offset=".5" stop-color="#1c3fba"/><stop offset="1" stop-color="#0a1a66"/>
+  </radialGradient>
+  <radialGradient id="g-milk" cx=".4" cy=".35" r=".7">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#f1f5ff"/><stop offset="1" stop-color="#cfdaf2"/>
+  </radialGradient>
+  <radialGradient id="g-sky" cx=".4" cy=".35" r=".72">
+    <stop offset="0" stop-color="#a8e2ff"/><stop offset=".55" stop-color="#4aa8ef"/><stop offset="1" stop-color="#2275c8"/>
+  </radialGradient>
+  <linearGradient id="g-goldmetal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fbe39a"/><stop offset=".3" stop-color="#e0ad45"/><stop offset=".55" stop-color="#f6d27a"/><stop offset=".8" stop-color="#b9831f"/><stop offset="1" stop-color="#8d5e12"/>
+  </linearGradient>
+  <radialGradient id="g-lapis" cx=".45" cy=".35" r=".75">
+    <stop offset="0" stop-color="#3a5fc4"/><stop offset=".55" stop-color="#22409a"/><stop offset="1" stop-color="#11235e"/>
+  </radialGradient>
+  <radialGradient id="g-cream" cx=".45" cy=".4" r=".7">
+    <stop offset="0" stop-color="#fffaf0"/><stop offset=".8" stop-color="#f1e3c4"/><stop offset="1" stop-color="#dcc79d"/>
+  </radialGradient>
+  <radialGradient id="g-petal" cx=".5" cy=".8" r=".9">
+    <stop offset="0" stop-color="#ff9a55"/><stop offset=".6" stop-color="#e45a26"/><stop offset="1" stop-color="#b43414"/>
+  </radialGradient>
+  <radialGradient id="g-jewel" cx=".35" cy=".3" r=".75">
+    <stop offset="0" stop-color="#ff8f73"/><stop offset=".5" stop-color="#cf2b1c"/><stop offset="1" stop-color="#6e0a07"/>
+  </radialGradient>
+  <linearGradient id="g-chili" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#9bd95a"/><stop offset=".45" stop-color="#3f8c1f"/><stop offset="1" stop-color="#1a4c10"/>
+  </linearGradient>
+  <radialGradient id="g-lemon" cx=".38" cy=".32" r=".8">
+    <stop offset="0" stop-color="#fff37e"/><stop offset=".45" stop-color="#f9d91f"/><stop offset=".8" stop-color="#e9b80c"/><stop offset="1" stop-color="#c59208"/>
+  </radialGradient>
+  <linearGradient id="g-copper" x1=".1" y1="0" x2=".95" y2="1">
+    <stop offset="0" stop-color="#eab690"/><stop offset=".3" stop-color="#bd6f40"/><stop offset=".65" stop-color="#83401c"/><stop offset="1" stop-color="#40190a"/>
+  </linearGradient>
+  <radialGradient id="g-face" cx=".5" cy=".42" r=".7">
+    <stop offset="0" stop-color="#c42d1b"/><stop offset=".55" stop-color="#96170c"/><stop offset="1" stop-color="#520705"/>
+  </radialGradient>
+  <radialGradient id="g-nose" cx=".45" cy=".6" r=".7">
+    <stop offset="0" stop-color="#e2553a"/><stop offset=".7" stop-color="#b52a17"/><stop offset="1" stop-color="#7a120a"/>
+  </radialGradient>
+  <linearGradient id="g-ivory" x1=".3" y1="1" x2=".6" y2="0">
+    <stop offset="0" stop-color="#fffaee"/><stop offset=".6" stop-color="#eee0c2"/><stop offset="1" stop-color="#c3a878"/>
+  </linearGradient>
+  <radialGradient id="g-curl" cx=".36" cy=".3" r=".75">
+    <stop offset="0" stop-color="#2a2830"/><stop offset=".4" stop-color="#0c0b0e"/><stop offset="1" stop-color="#020203"/>
+  </radialGradient>
+  <radialGradient id="g-eyeball" cx=".4" cy=".35" r=".7">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#f4ead8"/><stop offset="1" stop-color="#d9b5a0"/>
+  </radialGradient>
+  <linearGradient id="g-tongue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#9e1418"/><stop offset=".5" stop-color="#e64a3f"/><stop offset="1" stop-color="#a1151a"/>
+  </linearGradient>
+  <linearGradient id="g-knot" x1="0" y1="0" x2=".7" y2="1">
+    <stop offset="0" stop-color="#ea4a3f"/><stop offset=".5" stop-color="#c32420"/><stop offset="1" stop-color="#8a110e"/>
+  </linearGradient>
+  <linearGradient id="g-tassel" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#d12d26"/><stop offset="1" stop-color="#8d1410"/>
+  </linearGradient>
+  <radialGradient id="g-lacquer" cx=".35" cy=".28" r=".85">
+    <stop offset="0" stop-color="#ff5a45"/><stop offset=".45" stop-color="#dd1a12"/><stop offset=".85" stop-color="#a00a0a"/><stop offset="1" stop-color="#6c0406"/>
+  </radialGradient>
+
+  <filter id="f-drop" x="-60%" y="-60%" width="220%" height="220%">
+    <feDropShadow dx="0" dy=".8" stdDeviation=".6" flood-color="#000" flood-opacity=".28"/>
+  </filter>
+  <filter id="f-glass" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3.2" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="5" diffuseConstant="1.32" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="50"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="5" specularConstant="1" specularExponent="26" lighting-color="#fff" result="spec"><feDistantLight azimuth="225" elevation="52"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".65" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <filter id="f-small" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="50"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="3" specularConstant="1" specularExponent="22" lighting-color="#fff" result="spec"><feDistantLight azimuth="225" elevation="50"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".6" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <filter id="f-sculpt" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="7" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="48"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="7" specularConstant=".5" specularExponent="14" lighting-color="#fff" result="spec"><feDistantLight azimuth="235" elevation="50"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".5" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <!-- Textured surfaces: noise added to the height map before lighting. -->
+  <filter id="f-lemon" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="2.4" numOctaves="1" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="bumps"/>
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3.4" result="shape"/>
+    <feComposite in="shape" in2="bumps" operator="arithmetic" k1="0" k2=".96" k3=".04" k4="0" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="5" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="48"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="5" specularConstant=".9" specularExponent="18" lighting-color="#fffbe0" result="spec"><feDistantLight azimuth="225" elevation="52"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".55" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <filter id="f-coal" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feTurbulence type="turbulence" baseFrequency=".32" numOctaves="2" seed="5" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="bumps"/>
+    <feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="shape"/>
+    <feComposite in="shape" in2="bumps" operator="arithmetic" k1="0" k2=".78" k3=".22" k4="0" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="4" diffuseConstant="1.4" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="42"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="4" specularConstant=".9" specularExponent="16" lighting-color="#dfe4ee" result="spec"><feDistantLight azimuth="225" elevation="46"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <filter id="f-hammered" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="3" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="bumps"/>
+    <feGaussianBlur in="SourceAlpha" stdDeviation="1.2" result="shape"/>
+    <feComposite in="shape" in2="bumps" operator="arithmetic" k1="0" k2=".8" k3=".2" k4="0" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="3" diffuseConstant="1.25" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="50"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="3" specularConstant="1.2" specularExponent="20" lighting-color="#fff6d8" result="spec"><feDistantLight azimuth="225" elevation="52"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".6" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <linearGradient id="g-chilli-deep" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#5aa231"/><stop offset=".3" stop-color="#2c7516"/><stop offset=".7" stop-color="#16480c"/><stop offset="1" stop-color="#0b2906"/>
+  </linearGradient>
+  <radialGradient id="g-lemon-real" cx=".36" cy=".3" r=".78">
+    <stop offset="0" stop-color="#fff79a"/><stop offset=".3" stop-color="#ffe52e"/><stop offset=".68" stop-color="#f7c812"/><stop offset=".9" stop-color="#dca307"/><stop offset="1" stop-color="#b98404"/>
+  </radialGradient>
+  <radialGradient id="g-lemon-warm" cx=".78" cy=".82" r=".6">
+    <stop offset="0" stop-color="#e38b06" stop-opacity=".45"/><stop offset="1" stop-color="#e38b06" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="g-silver" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f1f3f7"/><stop offset=".45" stop-color="#a9adb8"/><stop offset="1" stop-color="#4c4f58"/>
+  </linearGradient>
+  <pattern id="p-crinkle" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+    <path d="M0,0 H2 M0,0 V2" stroke="#9a9ea8" stroke-width=".32"/>
+  </pattern>
+  <filter id="f-chilli" x="-15%" y="-80%" width="130%" height="300%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation=".9" result="h"/>
+    <feDiffuseLighting in="h" surfaceScale="2.5" diffuseConstant="1.12" lighting-color="#fff" result="diff"><feDistantLight azimuth="250" elevation="55"/></feDiffuseLighting>
+    <feSpecularLighting in="h" surfaceScale="2.5" specularConstant=".8" specularExponent="30" lighting-color="#fff" result="spec"><feDistantLight azimuth="250" elevation="58"/></feSpecularLighting>
+    <feComposite in="SourceGraphic" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine"/>
+    <feComposite in="lit" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".7" k4="0" result="out"/>
+    <feComposite in="out" in2="SourceAlpha" operator="in" result="body"/>
+    <feDropShadow in="body" dx="0" dy=".9" stdDeviation=".8" flood-color="#000" flood-opacity=".38"/>
+  </filter>
+</defs></svg>
+<svg id="art" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+/* ---------- shared pieces ---------- */
+const BEADS = {
+  white: ["#ffffff", "#e8e9ef", "#9b9fac"], gold: ["#ffe58c", "#e8ae2e", "#93620b"],
+  blue: ["#7092e2", "#2b4498", "#0a1547"], red: ["#ff7d69", "#d0231b", "#690509"], eye: ["#4a7df2", "#2242c0", "#0b156b"],
+};
+document.getElementById("defs").insertAdjacentHTML("beforeend", Object.entries(BEADS).map(([k, [a, b, c]]) =>
+  `<radialGradient id="b-${k}" cx=".37" cy=".3" r=".75"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></radialGradient>`).join(""));
+
+const f = (n) => n.toFixed(2);
+const thread = (y1, y2) => `
+  <path d="M0,${y1} V${y2}" stroke="#5e431e" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M0,${y1} V${y2}" stroke="#a07b45" stroke-width="1.2" fill="none" stroke-linecap="round"/>`;
+const bead = (y, r, kind, extra = "") => `
+  <g transform="translate(0,${y})" filter="url(#f-drop)">
+    <circle r="${r}" fill="url(#b-${kind})"/>${extra}
+    <circle r="${r}" fill="url(#b-rim)"/>
+    <ellipse cx="${f(-.34 * r)}" cy="${f(-.46 * r)}" rx="${f(.27 * r)}" ry="${f(.2 * r)}" fill="#fff" opacity=".85"/>
+  </g>`;
+const eyeInBead = (r) => `<circle r="${f(.55 * r)}" fill="#fff"/><circle r="${f(.35 * r)}" fill="#74c8f7"/><circle r="${f(.16 * r)}" fill="#0c0c18"/>`;
+const stripesOnBead = (r) => `
+  <path d="M${f(-.8 * r)},${f(-.2 * r)} Q0,${f(.04 * r)} ${f(.8 * r)},${f(-.2 * r)}" stroke="#f3c22c" stroke-opacity=".85" stroke-width="${f(.22 * r)}" fill="none" stroke-linecap="round"/>
+  <path d="M${f(-.72 * r)},${f(.24 * r)} Q0,${f(.52 * r)} ${f(.72 * r)},${f(.24 * r)}" stroke="#f3c22c" stroke-opacity=".75" stroke-width="${f(.2 * r)}" fill="none" stroke-linecap="round"/>`;
+/** Cord with a small, big, small bead strung on it; the charm body starts at y = 38.5. */
+const strung = (small, big, extra = "", smallBottom = small) => `
+  ${thread(0, 42)}
+  ${bead(4.5, 3.5, small)}${bead(14.5, 6, big, extra ? extra(6) : "")}${bead(23.5, 3.5, smallBottom)}`;
+/** Draw in a larger design space, scaled down into charm units. */
+const design = (width, top, scale, body) => `<g transform="translate(${f(-width * scale / 2)},${top}) scale(${scale})">${body}</g>`;
+const mirrored = (width, body) => `${body}<g transform="translate(${width},0) scale(-1,1)">${body}</g>`;
+
+/* ---------- Nazar boncuğu ---------- */
+const nazar = () => `
+  ${strung("white", "eye", eyeInBead)}
+  <g filter="url(#f-glass)">
+    <circle cx="0" cy="70.5" r="32" fill="url(#g-cobalt)"/>
+    <circle cx="0" cy="70.5" r="19.2" fill="url(#g-milk)"/>
+    <circle cx="0" cy="70.5" r="12.8" fill="url(#g-sky)"/>
+  </g>
+  <circle cx="0" cy="70.5" r="6.2" fill="#03061a"/>
+  <circle cx="0" cy="70.5" r="31.3" fill="none" stroke="#08164f" stroke-opacity=".5" stroke-width="1.3"/>
+  <circle cx="0" cy="70.5" r="19.2" fill="none" stroke="#0a1a5c" stroke-opacity=".3" stroke-width=".9"/>
+  <path d="M-21.9,55.2 A26.7,26.7 0 0 1 -6.9,44.7" stroke="#fff" stroke-opacity=".62" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+  <ellipse cx="-2.3" cy="68.2" rx="2.1" ry="1.5" fill="#fff" opacity=".9"/>
+  <ellipse cx="17.8" cy="90" rx="4.4" ry="2.1" fill="#fff" opacity=".22" transform="rotate(-40 17.8 90)"/>`;
+
+/* ---------- Hamsa: fingers down, gold frame, lapis enamel ---------- */
+const hamsaParts = (attrs) => `
+  <path d="M60,236 L60,150 C60,82 104,40 150,40 C196,40 240,82 240,150 L240,236 Z" ${attrs}/>
+  <path d="M66,172 C38,176 14,196 8,226 C30,216 54,224 70,248 Z" ${attrs}/>
+  <path d="M234,172 C262,176 286,196 292,226 C270,216 246,224 230,248 Z" ${attrs}/>
+  <path d="M60,220 H98 V346 A19,19 0 0 1 60,346 Z" ${attrs}/>
+  <path d="M98,220 H134 V372 A18,18 0 0 1 98,372 Z" ${attrs}/>
+  <path d="M132,220 H168 V382 A18,18 0 0 1 132,382 Z" ${attrs}/>
+  <path d="M166,220 H202 V372 A18,18 0 0 1 166,372 Z" ${attrs}/>
+  <path d="M202,220 H240 V346 A19,19 0 0 1 202,346 Z" ${attrs}/>`;
+const jewel = (x, y, r) => `<circle cx="${x}" cy="${y}" r="${r + 3}" fill="url(#g-goldmetal)"/><circle cx="${x}" cy="${y}" r="${r}" fill="url(#g-jewel)"/><circle cx="${x - r * .35}" cy="${y - r * .4}" r="${r * .3}" fill="#fff" opacity=".7"/>`;
+const leaf = (x, y, a) => `<ellipse cx="${x}" cy="${y}" rx="8" ry="3.6" transform="rotate(${a} ${x} ${y})" fill="url(#g-goldmetal)"/>`;
+const hamsaDecor = () => `
+  <path d="M98,252 V372 M133,252 V382 M167,252 V382 M202,252 V372" stroke="url(#g-goldmetal)" stroke-width="5"/>
+  <path d="M150,62 C166,82 166,104 150,118 C134,104 134,82 150,62 Z" fill="url(#g-cream)" stroke="#c99a3a" stroke-width="3"/>
+  ${jewel(150, 96, 6)}
+  ${mirrored(300, `<path d="M146,128 C124,130 104,118 106,98 C108,84 124,82 128,94 C130,102 122,106 118,100" fill="none" stroke="url(#g-goldmetal)" stroke-width="4.5" stroke-linecap="round"/>
+    <ellipse cx="96" cy="126" rx="13" ry="5.5" transform="rotate(-28 96 126)" fill="url(#g-cream)" stroke="#c99a3a" stroke-width="2"/>
+    ${jewel(84, 158, 5.5)}
+    <path d="M72,178 C92,168 112,164 128,166" fill="none" stroke="url(#g-goldmetal)" stroke-width="3.5" stroke-linecap="round"/>
+    ${jewel(36, 212, 6)}
+    <path d="M116,256 C104,272 128,288 116,304 C106,318 126,330 116,344" fill="none" stroke="url(#g-goldmetal)" stroke-width="3.5" stroke-linecap="round"/>
+    ${jewel(116, 360, 5.5)}
+    <path d="M79,262 C70,280 88,296 79,314" fill="none" stroke="url(#g-goldmetal)" stroke-width="3.5" stroke-linecap="round"/>
+    ${jewel(79, 334, 5.5)}`)}
+  <path d="M68,198 C106,146 194,146 232,198 C194,250 106,250 68,198 Z" fill="url(#g-cream)" stroke="url(#g-goldmetal)" stroke-width="8"/>
+  ${Array.from({ length: 12 }, (_, i) => `<ellipse cx="150" cy="176" rx="6.8" ry="13.5" fill="url(#g-petal)" stroke="#8f2a10" stroke-width="1" transform="rotate(${i * 30} 150 198)"/>`).join("")}
+  <circle cx="150" cy="198" r="13" fill="url(#g-goldmetal)"/>
+  <ellipse cx="150" cy="198" rx="6" ry="10" fill="#0f1d4f"/>
+  <path d="M150,254 C160,264 160,280 150,290 C140,280 140,264 150,254 Z" fill="url(#g-cream)" stroke="#c99a3a" stroke-width="2.5"/>
+  <path d="M150,296 V370" stroke="url(#g-goldmetal)" stroke-width="3.5"/>
+  ${[310, 330, 350].map(y => leaf(141, y, -35) + leaf(159, y, 35)).join("")}
+  ${jewel(150, 382, 5)}`;
+const hamsa = () => `
+  ${strung("gold", "blue")}
+  <g filter="url(#f-small)">${design(300, 33, .26, `<circle cx="150" cy="15" r="11" fill="none" stroke="url(#g-goldmetal)" stroke-width="7"/><rect x="139" y="23" width="22" height="22" rx="5" fill="url(#g-goldmetal)"/>`)}</g>
+  <g filter="url(#f-hammered)">${design(300, 33, .26, hamsaParts('fill="url(#g-goldmetal)" stroke="url(#g-goldmetal)" stroke-width="20" stroke-linejoin="round"'))}</g>
+  <g filter="url(#f-glass)">${design(300, 33, .26, hamsaParts('fill="url(#g-lapis)"'))}</g>
+  <g filter="url(#f-small)">${design(300, 33, .26, hamsaDecor())}</g>`;
+
+/* ---------- Nimbu-mirchi: seven chillies strung across the thread, a lemon, a lump of charcoal ---------- */
+const chilli = ([y, length, thickness, angle, flip]) => `
+  <g transform="translate(0,${y}) rotate(${angle})" filter="url(#f-chilli)">
+    <g transform="scale(${flip ? -1 : 1},1) scale(${f(length / 64)},${f(thickness / 10)})">
+      <path d="M-39.4,-6 C-38,-2.8 -35.4,-.8 -31.8,-.2" stroke="#56731b" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M-27,-3.2 C-16,-5.4 2,-5.2 14,-3.6 C22,-2.6 28,-.4 31.5,3.2 C32.2,3.9 31.8,4.4 31,4.1 C26,1.8 20,1.4 13,2.2 C1,3.6 -15,4.4 -27,3.4 C-29.5,3.2 -30.4,-3 -27,-3.2 Z" fill="url(#g-chilli-deep)"/>
+      <path d="M-23,-2.7 C-10,-4.3 5,-4.1 15,-2.9" stroke="#c9ef95" stroke-width=".8" stroke-opacity=".7" fill="none" stroke-linecap="round"/>
+      <path d="M-27.8,-3.8 C-32.2,-4.6 -33.2,4.4 -27.8,4 C-26.2,2.2 -26,-2 -27.8,-3.8 Z" fill="#6f8f24"/>
+      <path d="M-27.4,-3.6 l2.4,1.4 l-2.2,.9 M-27.4,3.8 l2.4,-1.4 l-2.2,-.9" fill="#8aa934"/>
+    </g>
+  </g>`;
+const lemonShape = 'M0,23.7 C12.6,23.7 22,34 22,48 C22,62 12.6,72.3 0,72.3 C-12.6,72.3 -22,62 -22,48 C-22,34 -12.6,23.7 0,23.7 Z';
+const nimbu = () => `
+  ${thread(0, 44)}
+  ${[[8, 64, 8.4, 4.6, false], [12.1, 44, 10.8, -6.5, true], [16.2, 56, 10.8, 3.2, false], [20.3, 60, 9, -4.4, true],
+     [24.4, 64, 13.2, 7, false], [28.5, 58, 11.6, -3.2, true], [32.6, 57, 10.2, 5.4, false]].map(chilli).join("")}
+  <g transform="rotate(7 0 48)">
+    <g filter="url(#f-lemon)">
+      <path d="${lemonShape}" fill="url(#g-lemon-real)"/>
+      <path d="M-3.2,25 C-2.4,21.4 2.4,21 3.6,24.8 Z M-3.2,71 C-2.4,74.6 2.4,75 3.6,71.2 Z" fill="#f4cd16"/>
+    </g>
+    <path d="${lemonShape}" fill="url(#g-lemon-warm)"/>
+    <ellipse cx=".4" cy="21.3" rx="1.8" ry="1.1" fill="#78ad2c"/>
+    <ellipse cx=".4" cy="74.7" rx="1.7" ry="1.1" fill="#78ad2c"/>
+    <ellipse cx="-8.4" cy="35.6" rx="6.2" ry="3.2" fill="#fffef0" opacity=".5" transform="rotate(-38 -8.4 35.6)"/>
+    <ellipse cx="-10.4" cy="37.8" rx="1.8" ry="1" fill="#fff" opacity=".85" transform="rotate(-38 -10.4 37.8)"/>
+  </g>
+  <clipPath id="coal-clip"><path d="M-10.4,71.6 C-8.4,67.2 -3.6,66.6 -.6,67.8 C2.4,65.6 7.8,66.4 9.6,69.6 C12.2,72.2 11.4,76.2 12,78.6 C12.4,82.6 8.6,85.6 4.6,85 C1.6,87 -3.6,86.6 -6,84.4 C-9.8,84.4 -12.4,80.6 -11.6,77.4 C-12.8,75.4 -12,73 -10.4,71.6 Z"/></clipPath>
+  <g filter="url(#f-drop)">
+    <g filter="url(#f-coal)"><path d="M-10.4,71.6 C-8.4,67.2 -3.6,66.6 -.6,67.8 C2.4,65.6 7.8,66.4 9.6,69.6 C12.2,72.2 11.4,76.2 12,78.6 C12.4,82.6 8.6,85.6 4.6,85 C1.6,87 -3.6,86.6 -6,84.4 C-9.8,84.4 -12.4,80.6 -11.6,77.4 C-12.8,75.4 -12,73 -10.4,71.6 Z" fill="#17171b"/></g>
+    <g clip-path="url(#coal-clip)">
+      <path d="M-12,73 L-5.6,69.4 L-2.4,75.2 L-8.8,79.6 Z" fill="#34343c" opacity=".85"/>
+      <path d="M-2.4,75.2 L3.4,72.2 L6.4,78.4 L.6,81.4 Z" fill="#26262d"/>
+      <path d="M3.4,72.2 L9.6,69 L12.4,75.4 L6.4,78.4 Z" fill="#3b3c45" opacity=".8"/>
+      <path d="M-8.8,79.6 L-2.4,75.2 L.6,81.4 L-4.6,87 Z" fill="#0a0a0c"/>
+      <path d="M.6,81.4 L6.4,78.4 L10.6,84 L4,88 Z" fill="#121216"/>
+      <path d="M-8.6,70.4 C-5.6,67.4 -.6,67.4 2.4,69.2 C1.2,72.4 -3.4,73.8 -7.2,74.2 C-8.8,73 -9.4,71.6 -8.6,70.4 Z" fill="url(#g-silver)" opacity=".9"/>
+      <rect x="-14" y="64" width="28" height="26" fill="url(#p-crinkle)" opacity=".2"/>
+    </g>
+  </g>`;
+
+/* ---------- Ghanta ---------- */
+const ghanta = () => `
+  ${strung("gold", "red")}
+  <g transform="translate(0,6)">
+    <g filter="url(#f-glass)">
+      <path d="M-5,29.6 h10 l-1.8,6.4 h-6.4 z" fill="url(#g-copper)"/>
+      <ellipse cx="0" cy="38" rx="10.5" ry="3.6" fill="url(#g-copper)"/>
+      <path d="M-10,39 C-22,40 -25,50 -25.5,62 C-26,74 -29,81 -37,86 L37,86 C29,81 26,74 25.5,62 C25,50 22,40 10,39 Z" fill="url(#g-copper)"/>
+      <ellipse cx="0" cy="87" rx="37.5" ry="6.5" fill="url(#g-copper)"/>
+    </g>
+    <path d="M-24.8,55 C-8,58.6 8,58.6 24.8,55" fill="none" stroke="#3a1407" stroke-opacity=".5" stroke-width="1.4"/>
+    <path d="M-25.6,60 C-8,63.4 8,63.4 25.6,60" fill="none" stroke="#ffd2b0" stroke-opacity=".35" stroke-width=".9"/>
+    <path d="M-28,76 C-9,80 9,80 28,76" fill="none" stroke="#3a1407" stroke-opacity=".5" stroke-width="1.4"/>
+    <ellipse cx="0" cy="88.6" rx="30" ry="4.2" fill="#2a0e05" opacity=".7"/>
+    <path d="M0,88 V99" stroke="#3a1407" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#f-small)"><circle cx="0" cy="103" r="6.2" fill="url(#g-copper)"/></g>
+  </g>`;
+
+/* ---------- Drishti bommai: a carved guardian mask ---------- */
+const curl = ([x, y], r) => `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#g-curl)"/>
+  <path d="M${f(x - r * .5)},${f(y + r * .15)} a${f(r * .48)},${f(r * .48)} 0 1 1 ${f(r * .52)},${f(r * .44)} a${f(r * .26)},${f(r * .26)} 0 1 1 ${f(-r * .04)},${f(-r * .5)}" fill="none" stroke="#000" stroke-width="3"/>
+  <path d="M${f(x - r * .72)},${f(y - r * .2)} a${f(r * .76)},${f(r * .76)} 0 0 1 ${f(r * .56)},${f(-r * .52)}" fill="none" stroke="#5d5a66" stroke-width="1.8" opacity=".7" stroke-linecap="round"/>`;
+const scorpion = (cy) => `
+  <g fill="none" stroke="#1d0a0a" stroke-linecap="round" transform="translate(0,${cy - 366})">
+    <ellipse cx="150" cy="366" rx="4.6" ry="9" fill="#1d0a0a" stroke="none"/>
+    <path d="M150,375 C151,388 160,392 164,385 C167,379 161,375 158,380" stroke-width="2.6"/>
+    <path d="M146,359 C139,354 136,348 139,342 M154,359 C161,354 164,348 161,342" stroke-width="2.2"/>
+    <path d="M136,343 l4,-3 M137,338 l4,3 M164,343 l-4,-3 M163,338 l-4,3" stroke-width="1.8"/>
+    <path d="M146,362 l-8,-2 M146,366 l-9,1 M146,370 l-8,4 M154,362 l8,-2 M154,366 l9,1 M154,370 l8,4" stroke-width="1.5"/>
+  </g>`;
+const bommaiBack = () => mirrored(300, `
+  <path d="M56,132 C26,108 10,58 36,4 C52,42 90,76 132,98 Z" fill="url(#g-ivory)" stroke="#8f7a55" stroke-width="2"/>
+  <path d="M56,132 C44,120 36,108 31,96 C58,100 92,104 124,98 Z" fill="#c4aa7c" opacity=".5"/>
+  <path d="M38,94 q18,8 36,0 M30,70 q14,6 28,0 M30,44 q10,5 20,0" stroke="#b09470" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <path d="M62,120 C30,130 16,170 24,222 C38,226 54,216 60,200 Z" fill="#0b0a0d"/>
+  <ellipse cx="36" cy="264" rx="21" ry="39" fill="url(#g-face)"/>
+  <ellipse cx="41" cy="264" rx="10" ry="25" fill="#5e0c07" opacity=".6"/>`);
+const bommaiHairMass = () => `<path d="M58,134 C38,110 50,58 92,40 C122,24 178,24 208,40 C250,58 262,110 242,134 Z" fill="#070608"/>`;
+const bommaiHair = () => `
+  ${[[125, 42], [152, 38], [178, 42], [96, 62], [124, 60], [152, 58], [180, 60], [206, 62],
+     [76, 86], [102, 82], [128, 80], [154, 80], [180, 82], [206, 84], [228, 88],
+     [62, 110], [88, 106], [212, 106], [238, 110],
+     [42, 132], [258, 132], [32, 158], [268, 158], [36, 186], [264, 186], [44, 210], [256, 210]].map(p => curl(p, 15)).join("")}`;
+const bommaiFace = () => `<path d="M62,134 C50,178 40,236 48,282 C56,330 94,358 150,362 C206,358 244,330 252,282 C260,236 250,178 238,134 C202,120 98,120 62,134 Z" fill="url(#g-face)"/>`;
+const bommaiFront = () => `
+  <path d="M58,138 C98,112 202,112 242,138 L240,154 C202,128 98,128 60,154 Z" fill="url(#g-goldmetal)" stroke="#7d5310" stroke-width="1.6"/>
+  ${[[74, 140], [94, 132], [114, 127], [132, 124], [168, 124], [186, 127], [206, 132], [226, 140]].map(([x, y]) => jewel(x, y, 3.6)).join("")}
+  ${jewel(150, 123, 6.5)}
+  <path d="M104,150 C132,142 168,142 196,150 M96,166 C126,158 174,158 204,166 M102,182 C130,175 170,175 198,182" stroke="#f6eedb" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+  <circle cx="150" cy="166" r="11.5" fill="url(#g-goldmetal)" stroke="#7d5310" stroke-width="1.2"/><circle cx="150" cy="166" r="7.2" fill="url(#g-jewel)"/>
+  ${mirrored(300, `
+    <path d="M86,148 C70,158 64,178 76,196 C76,182 84,170 98,162 Z" fill="#f3b23a"/>
+    <path d="M122,214 C112,232 108,262 120,274 C96,272 78,254 82,232 Z" fill="#4a0805" opacity=".45"/>
+    <path d="M148,216 C132,188 98,174 62,182 C48,186 44,206 60,208 C92,196 122,206 140,230 Z" fill="#0b0a0d"/>
+    <path d="M60,188 C84,180 112,184 132,200" stroke="#5a5660" stroke-width="2" fill="none" opacity=".6" stroke-linecap="round"/>
+    <path d="M56,228 C48,240 52,256 66,260 C60,250 62,238 70,232 Z" fill="#f3b23a" stroke="#5a1406" stroke-width="1.2"/>
+    <circle cx="108" cy="244" r="29" fill="url(#g-eyeball)" stroke="#1c0504" stroke-width="5"/>
+    <circle cx="108" cy="244" r="19" fill="#d6431c"/>
+    <circle cx="108" cy="244" r="14" fill="#f08a2a"/>
+    <circle cx="109" cy="245" r="9.5" fill="#0a0707"/>
+    <circle cx="102" cy="238" r="4" fill="#fff"/>`)}
+  <path d="M134,252 C130,270 112,282 116,302 C120,318 180,318 184,302 C188,282 170,270 166,252 Z" fill="url(#g-nose)"/>
+  <ellipse cx="136" cy="306" rx="7.5" ry="4.2" fill="#3a0704"/><ellipse cx="164" cy="306" rx="7.5" ry="4.2" fill="#3a0704"/>
+  <ellipse cx="150" cy="292" rx="11" ry="6.5" fill="#fff" opacity=".22"/>
+  <ellipse cx="146" cy="268" rx="4" ry="10" fill="#fff" opacity=".2"/>
+  <path d="M100,316 C120,350 180,350 200,316 C180,330 120,330 100,316 Z" fill="#1c0304"/>
+  <path d="M110,320 H190 V338 C170,343 130,343 110,338 Z" fill="#f4ecd8"/>
+  <path d="M123,321 V340 M136,321 V342 M150,321 V342 M164,321 V342 M177,321 V340" stroke="#b5a482" stroke-width="1.6"/>
+  <path d="M124,334 C120,364 124,396 150,410 C176,396 180,364 176,334 Z" fill="url(#g-tongue)" stroke="#5e080a" stroke-width="1.6"/>
+  ${scorpion(378)}
+  ${mirrored(300, `
+    <path d="M112,322 C104,346 92,366 74,388 C102,380 124,358 140,328 Z" fill="url(#g-ivory)" stroke="#5e4a2c" stroke-width="2"/>
+    <path d="M150,284 C122,274 88,280 62,298 C52,305 42,308 34,304 L34,322 C52,330 72,326 92,320 C114,314 134,316 150,322 Z" fill="#0a090c"/>
+    <circle cx="38" cy="294" r="13.5" fill="none" stroke="#0a090c" stroke-width="12"/>
+    <path d="M140,288 C116,282 88,288 66,304" stroke="#6a6674" stroke-width="2.6" fill="none" opacity=".55" stroke-linecap="round"/>
+    <path d="M30,284 a12,12 0 0 1 16,-2" stroke="#6a6674" stroke-width="2.2" fill="none" opacity=".6" stroke-linecap="round"/>
+    <path d="M26,304 V312" stroke="url(#g-goldmetal)" stroke-width="4"/>
+    <circle cx="24" cy="334" r="21" fill="url(#g-goldmetal)" stroke="#6f490c" stroke-width="2"/>
+    <circle cx="24" cy="334" r="13.5" fill="none" stroke="#9a6a16" stroke-width="3"/>
+    <circle cx="24" cy="334" r="6.5" fill="url(#g-goldmetal)" stroke="#8a5e12" stroke-width="1"/>`)}`;
+const bommai = () => `
+  ${strung("gold", "red", stripesOnBead)}
+  <g filter="url(#f-glass)">${design(300, 34, .31, bommaiBack())}</g>
+  ${design(300, 34, .31, bommaiHairMass())}
+  <g filter="url(#f-drop)">${design(300, 34, .31, bommaiHair())}</g>
+  <g filter="url(#f-sculpt)">${design(300, 34, .31, bommaiFace())}</g>
+  <g filter="url(#f-small)">${design(300, 34, .31, bommaiFront())}</g>`;
+
+/* ---------- Panchang jie ---------- */
+const knot = () => `
+  ${strung("red", "gold")}
+  <g filter="url(#f-small)">
+    <g transform="translate(0,4)" stroke="url(#g-knot)" fill="none" stroke-width="7.5" stroke-linejoin="round">
+      <rect x="-19" y="-19" width="38" height="38" rx="7" transform="rotate(45 0 62) translate(0,62)"/>
+      <rect x="-27" y="-13" width="54" height="26" rx="9" transform="translate(0,62)"/>
+      <rect x="-13" y="-27" width="26" height="54" rx="9" transform="translate(0,62)"/>
+    </g>
+  </g>
+  ${bead(97, 6, "gold")}
+  <g filter="url(#f-small)"><path d="M-9,101 h18 a3,3 0 0 1 0,6 h-18 a3,3 0 0 1 0,-6 z" fill="url(#g-goldmetal)"/></g>
+  <g stroke="url(#g-tassel)" stroke-width="2.6" fill="none" stroke-linecap="round">
+    <path d="M-7,108 C-9,120 -10,130 -8,140"/><path d="M-3.5,108 C-4.5,120 -5,132 -4,142"/>
+    <path d="M0,108 C0,120 0,132 0,143"/><path d="M3.5,108 C4.5,120 5,132 4,142"/>
+    <path d="M7,108 C9,120 10,130 8,140"/>
+  </g>`;
+
+/* ---------- Daruma ---------- */
+const darumaBody = () => `
+  <ellipse cx="200" cy="366" rx="112" ry="16" fill="#7c0808"/>
+  <path d="M200,20 C318,20 384,108 384,214 C384,296 346,344 304,362 L96,362 C54,344 16,296 16,214 C16,108 82,20 200,20 Z" fill="url(#g-lacquer)"/>`;
+const darumaFace = () => `
+  <path d="M56,112 C120,84 280,84 344,112 C362,152 358,214 330,240 C262,256 138,256 70,240 C42,214 38,152 56,112 Z" fill="#fbfaf5" stroke="#e1c16e" stroke-width="6"/>
+  ${mirrored(400, `
+    <path d="M84,146 C100,110 160,104 188,126 C170,120 140,120 122,136 C138,134 150,142 146,152 C132,140 108,142 92,158 Z" fill="#141216"/>
+    <path d="M104,132 C120,120 146,118 166,124" stroke="#e8772e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M62,176 C58,206 78,232 108,234 C92,224 84,208 90,192 C94,204 104,210 112,206 C100,198 98,182 108,172 C88,170 74,172 62,176 Z" fill="#141216"/>
+    <path d="M76,190 C72,206 84,222 100,226" stroke="#e8772e" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="140" cy="178" r="41" fill="none" stroke="#141216" stroke-width="2"/>
+    <circle cx="140" cy="178" r="36" fill="#fff" stroke="#e8772e" stroke-width="7"/>
+    <circle cx="142" cy="181" r="14" fill="#151315"/>
+    <circle cx="137" cy="175" r="4" fill="#fff"/>
+    <path d="M170,216 q9,-10 18,0" stroke="#c63526" stroke-width="4.5" fill="none" stroke-linecap="round"/>`)}
+  <path d="M174,236 C188,226 212,226 226,236" stroke="#c1272d" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+const darumaGold = () => `
+  ${mirrored(400, `
+    <path d="M60,262 C50,300 60,332 80,352 C72,322 70,292 76,264 Z" fill="url(#g-goldmetal)"/>
+    <path d="M92,268 C84,302 92,330 108,350 C102,322 100,296 106,270 Z" fill="url(#g-goldmetal)"/>
+    <path d="M122,274 C116,302 122,326 134,344 C130,320 130,298 134,276 Z" fill="url(#g-goldmetal)"/>`)}
+  <text x="200" y="344" text-anchor="middle" font-size="100" font-weight="700" font-family="Hiragino Mincho ProN, Songti SC, STSong, serif" fill="url(#g-goldmetal)" stroke="#8a5a10" stroke-width="2">福</text>`;
+const daruma = () => `
+  ${strung("gold", "white")}
+  <g filter="url(#f-glass)">${design(400, 38, .2, darumaBody())}</g>
+  ${design(400, 38, .2, `<ellipse cx="120" cy="60" rx="62" ry="20" fill="#fff" opacity=".32" transform="rotate(-22 120 60)"/>`)}
+  <g filter="url(#f-small)">${design(400, 38, .2, darumaFace())}</g>
+  <g filter="url(#f-small)">${design(400, 38, .2, darumaGold())}</g>`;
+
+const ART = { nazar: [nazar, 106], hamsa: [hamsa, 142], nimbu: [nimbu, 90], ghanta: [ghanta, 118],
+              bommai: [bommai, 164], panchang: [knot, 148], daruma: [daruma, 116] };
+const [draw, h] = ART[location.hash.slice(1)] || ART.nazar;
+const S = 4, svg = document.getElementById("art");
+svg.setAttribute("viewBox", `-60 0 120 ${h}`);
+svg.setAttribute("width", 120 * S);
+svg.setAttribute("height", h * S);
+svg.innerHTML = draw();
+</script>
